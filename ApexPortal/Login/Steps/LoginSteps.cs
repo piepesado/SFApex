@@ -21,19 +21,19 @@ namespace ApexPortal.Login.Steps
             _loginPage = LoginPage.NavigateTo(_driver);
         }
         
-        [Given(@"I enter (.*) as the username")]
+        [When(@"I enter (.*) as the username")]
         public void GivenIEnterUsername(string userName)
         {
             _loginPage.Username = userName;
         }
         
-        [Given(@"I enter (.*) as the password")]
+        [When(@"I enter (.*) as the password")]
         public void GivenIEnterThePassword(string passWord)
         {
             _loginPage.Password = passWord;
         }
         
-        [Given(@"I enter (.*) as the CID")]
+        [When(@"I enter (.*) as the CID")]
         public void GivenIEnterAsTheCID(string cid)
         {
             _loginPage.Cid = cid;
@@ -46,7 +46,7 @@ namespace ApexPortal.Login.Steps
         }
         
         [Then(@"I should land on Apex hompage for Agency Agent role")]
-        public void ThenIShouldLandOnApexHompageForAgencyAgentRole()
+        public void LandOnApexHompage()
         {
             _homePage.EnsurePageIsLoaded();
             Assert.AreEqual("APEX Portal", _driver.Title);

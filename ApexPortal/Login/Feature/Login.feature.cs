@@ -17,8 +17,7 @@ namespace ApexPortal.Login.Feature
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("TechTalk.SpecFlow", "2.2.0.0")]
     [System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [NUnit.Framework.TestFixtureAttribute()]
-    [NUnit.Framework.DescriptionAttribute("Login")]
+    [TechTalk.SpecRun.FeatureAttribute("Login", Description="\tAs a Agency Agent user,\r\n\tI would like to be able to login into APEX Portal", SourceFile="Login\\Feature\\Login.feature", SourceLine=0)]
     public partial class LoginFeature
     {
         
@@ -27,7 +26,7 @@ namespace ApexPortal.Login.Feature
 #line 1 "Login.feature"
 #line hidden
         
-        [NUnit.Framework.OneTimeSetUpAttribute()]
+        [TechTalk.SpecRun.FeatureInitialize()]
         public virtual void FeatureSetup()
         {
             testRunner = TechTalk.SpecFlow.TestRunnerManager.GetTestRunner();
@@ -35,19 +34,18 @@ namespace ApexPortal.Login.Feature
             testRunner.OnFeatureStart(featureInfo);
         }
         
-        [NUnit.Framework.OneTimeTearDownAttribute()]
+        [TechTalk.SpecRun.FeatureCleanup()]
         public virtual void FeatureTearDown()
         {
             testRunner.OnFeatureEnd();
             testRunner = null;
         }
         
-        [NUnit.Framework.SetUpAttribute()]
         public virtual void TestInitialize()
         {
         }
         
-        [NUnit.Framework.TearDownAttribute()]
+        [TechTalk.SpecRun.ScenarioCleanup()]
         public virtual void ScenarioTearDown()
         {
             testRunner.OnScenarioEnd();
@@ -63,10 +61,6 @@ namespace ApexPortal.Login.Feature
             testRunner.CollectScenarioErrors();
         }
         
-        [NUnit.Framework.TestAttribute()]
-        [NUnit.Framework.DescriptionAttribute("Login as a Agency Agent By Example")]
-        [NUnit.Framework.CategoryAttribute("login")]
-        [NUnit.Framework.TestCaseAttribute("jimmie.carr@travelleaders.com", "zaq1ZAQ!", "94326", null)]
         public virtual void LoginAsAAgencyAgentByExample(string username, string password, string cid, string[] exampleTags)
         {
             string[] @__tags = new string[] {
@@ -81,17 +75,32 @@ this.ScenarioSetup(scenarioInfo);
 #line 7
  testRunner.Given("that I navigate to the APEX Portal Url", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Given ");
 #line 8
- testRunner.And("I have entered <userame> as username", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.When("I have entered <userame> as username", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line 9
  testRunner.And(string.Format("I have entered the {0} as password", password), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 10
  testRunner.And(string.Format("I have entered {0} as the CID number", cid), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 11
- testRunner.When("I click on Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
+ testRunner.And("I click on Login button", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line 12
  testRunner.Then("I should land on Apex hompage for Agency Agent role", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             this.ScenarioCleanup();
+        }
+        
+        [TechTalk.SpecRun.ScenarioAttribute("Login as a Agency Agent By Example, jimmie.carr@travelleaders.com", new string[] {
+                "login"}, SourceLine=15)]
+        public virtual void LoginAsAAgencyAgentByExample_Jimmie_CarrTravelleaders_Com()
+        {
+#line 6
+this.LoginAsAAgencyAgentByExample("jimmie.carr@travelleaders.com", "zaq1ZAQ!", "94326", ((string[])(null)));
+#line hidden
+        }
+        
+        [TechTalk.SpecRun.TestRunCleanup()]
+        public virtual void TestRunCleanup()
+        {
+            TechTalk.SpecFlow.TestRunnerManager.GetTestRunner().OnTestRunEnd();
         }
     }
 }
